@@ -38,6 +38,7 @@ resource "aws_eks_cluster" "example" {
   role_arn = aws_iam_role.example.arn
 
   vpc_config {
+    exclude_names = ["us-east-1e"]
     subnet_ids = data.aws_subnets.public.ids
   }
 
